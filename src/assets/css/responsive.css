@@ -1,0 +1,368 @@
+@media screen and (max-width: 480px) {
+    .shortWidth{
+        width: 500px;
+    }
+
+    .ProfileIconMargin
+    {
+        margin-left: 50px;
+    }
+}
+
+
+/* @media only screen and (-width: 1500px) {
+  
+  .fontSize12{
+  font-size: 1rem;
+  }
+
+  
+.fontSize14{
+  font-size: 1.2rem;
+  }
+  
+  .fontSize10{
+  font-size: 0.8rem;
+  }
+  
+  .fontSize8{
+  font-size: 0.6rem;
+  }
+  
+} */
+
+
+.FullSpaceUse
+{
+   height: 100%;
+   width: 100%; 
+}
+
+.FullSpaceWidth
+{
+  width: 100%;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+.sans{
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.KeepItLeft
+{
+    text-align: left;
+}
+
+.KeepItCenter
+{
+    text-align: center;
+}
+
+
+.containerCheckbox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .containerCheckbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: white;
+    border:1px solid #d3d3d3
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .containerCheckbox:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .containerCheckbox input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .containerCheckbox input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .containerCheckbox .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .identify-image-size
+  {
+    height: 100%;
+    width: 60%;
+    filter: grayscale(100%);
+  }
+
+  .identify-image-size:hover
+  {
+    height: 100%;
+    width: 100%;
+    filter: grayscale(0%);
+  }
+
+  .packageExpanderOwner{
+    width:95%
+  }
+
+  .packageExpanderUser{
+    width:95%
+  }
+
+  .packageExpanderOwner:hover{
+    width:100%;
+    color:white;
+    background-color: #ff425c;
+  }
+
+  .packageExpanderUser:hover{
+    width:100%;
+    color:white;
+    background-color: #2dcee3;
+  }
+
+
+  /* common Styles */
+
+  .flexAlignleft{
+    justify-content: flex-start;
+}
+
+.flexAlignRight{
+    justify-content: flex-end;
+}
+
+.flexAlignCenter{
+    justify-content: center;
+}
+
+.textAlignLeft{
+    text-align: left;
+}
+
+.textAlignCenter{
+    text-align: center;
+}
+
+.textAlignRight{
+    text-align: right;
+}
+
+.CallDetailsCard{
+    box-shadow: 2px 2px 2px #ccc;
+    background-color:white;
+    opacity: 1;
+}
+
+.flexBoxer{
+    display:flex
+}
+
+.CardHeading{
+    background-color: #92a3fc;
+    color: white;
+}
+
+.CardHeadingText{
+    font-size: 1.2rem;
+    color: white;
+}
+
+.CardContentText{
+    font-size: 1.4rem;
+    opacity:0.8
+}
+
+.CardContentSub{
+    font-size: 1rem;
+    opacity:0.8
+}
+
+
+.fontSize12{
+  font-size: 1.2rem;
+  }
+
+  
+.fontSize14{
+  font-size: 1.4rem;
+  }
+
+.fontSize20{
+  font-size: 2.0rem;
+}
+  
+  .fontSize10{
+  font-size: 1rem;
+  }
+  
+  .fontSize8{
+  font-size: 0.8rem;
+  }
+
+  
+@media only screen and (max-width: 1500px) {
+  
+  .fontSize12{
+  font-size: 0.8rem;
+  }
+
+  
+.fontSize14{
+  font-size: 1rem;
+  }
+  
+  .fontSize10{
+  font-size: 0.8rem;
+  }
+  
+  .fontSize8{
+  font-size: 0.6rem;
+  }
+
+  .ProfitROIMargin{
+    
+  } 
+  
+}
+  
+  .opacity08{
+  opacity: 0.8;
+  }
+
+  .opacity07{
+    opacity:0.7;
+  }
+  
+  .opacity06{
+  opacity:0.6;
+  }
+
+  .CircularProgressbarContainer{
+    height: 200px;
+    padding-left:7%;
+    padding-right:7%; 
+  }
+
+  .CircularProgressbar-path {
+    stroke: red;
+  }
+
+
+  /* Navbar */
+
+  .NavbarContainer{
+    height:55px;
+    box-shadow: 1px 1px 1px #ccc;
+    margin-bottom: 0px;
+    z-index: 1;
+  }
+
+  .NavbarIconsContainer{
+    border:1px solid #ccc;
+    border-radius:100%;
+    width:40px
+  }
+
+  .IconsReadings{
+    margin-left: 5%;
+    border: 1px solid #ccc;
+    margin-top: -10px;
+    width:22px;
+    border-radius: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #ff6961;
+    color: white;
+    margin-left: 8px;
+  }
+
+  .IconsReadingsEmpty{
+    margin-left: 5%;
+    border: 1px solid #ccc;
+    margin-top: -10px;
+    width:22px;
+    border-radius: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color:grey;
+    color: white;
+    margin-left: 8px;
+  }
+
+  .UserNameIcon{
+    background-color: #1890ff;
+    color: white;
+  }
+
+  .SelectedPermission{
+    background-color:#92a3fc;
+    color:white
+  }
+
+  .BriefCardPadding{
+    padding: 10px;
+  }
+
+  .BriefCardPadding:hover{
+    padding:0px;
+    transition: 0.2s;
+  }
+
+  .CompanyCardHover{
+    padding:15px
+  }
+
+  .CompanyCardHover:hover{
+    padding: 0px;
+  }
+
+
+
+  
