@@ -12,6 +12,7 @@ import './assets/css/responsive.css'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import './assets/css/Animate.css'
 import CreditPackage from './CreditPackage'
+import FAQ from './FAQ'
 class App extends React.Component
  {
    constructor()
@@ -110,8 +111,26 @@ class App extends React.Component
       ],
       ScreenWidth:0,
       AllowedCards:3,
-      Slide:1
+      Slide:1,
+      Name:"",
+      Contact:"",
+      Email:"",
+      UserType:"",
+      Subject:"",
+      Messages:""
      }
+   }
+
+   onContactUsClicked=()=>{
+    fetch('', {
+      method: 'post',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({Name: this.state.Name,Contact:this.state.Contact,Email:this.state.Email,UserType:this.state.UserType,Subject:this.state.Subject,Messages:this.state.Messages})
+    }).then(res=>res.json())
+      .then(res => console.log(res));
    }
 
    componentDidMount() {
@@ -234,26 +253,28 @@ class App extends React.Component
           <div className="container" data-aos="zoom-in">
     
             <div class="text-center">
-              <h3>Notify Me</h3>
+              {/* <h3>Notify Me</h3> */}
               <div className="row my-5">
                 <div className="col-xl-3 text-left">
-                  <label><p className="mb-0">First Name:</p></label>
-                  <input type="text" className="form-control" placeholder="Please Enter Your First Name"></input>
+                  <label><p className="mb-0">Name:</p></label>
+                  <input type="text" className="form-control" onChange={(e)=>this.setState({Name:e.target.value})} placeholder="Please Enter Your Name"></input>
                 </div>
                 <div className="col-xl-3 text-left">
-                  <label><p className="mb-0">Last Name:</p></label>
-                  <input type="text" className="form-control" placeholder="Please Enter Your Last Name"></input>
+                  <label><p className="mb-0">Contact No:</p></label>
+                  <input type="text" className="form-control" onChange={(e)=>this.setState({Contact:e.target.value})} placeholder="Please Enter Your Contact No."></input>
                 </div>
                 <div className="col-xl-3 text-left">
                   <label><p className="mb-0">Email:</p></label>
-                  <input type="text" className="form-control" placeholder="Please Enter Your Email"></input>
+                  <input type="text" className="form-control" onChange={(e)=>this.setState({Email:e.target.value})} placeholder="Please Enter Your Email"></input>
                 </div>
                 <div className="col-xl-3 text-left">
                   <label><p className="mb-0">User Typer:</p></label>
-                  <select type="text" className="form-control" placeholder="Select User Type">
+                  <select type="text" onChange={(e)=>this.setState({UserType:e.target.value})} className="form-control" placeholder="Select User Type">
                     <option>Broker</option>
+                    <option>Sub-Broker</option>
                     <option>Research House</option>
                     <option>Independent Analyst</option>
+                    <option>Customer</option>
                   </select>
                 </div>
               </div>
@@ -261,6 +282,7 @@ class App extends React.Component
             </div>
           </div>
         </section>
+        
     
         <section id="services" className="services">
           <div className="container">
@@ -454,8 +476,111 @@ class App extends React.Component
               this.setState({Slide:this.state.Slide+1})}}></i>
               </div>
             </div>
-         
         </section>
+        <section id="contact" class="contact">
+            <div class="container">
+
+              <div class="section-title" data-aos="zoom-in">
+                <h2>Contact</h2>
+                <h3>Check our <span>Contact</span> Details</h3>
+                <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+              </div>
+
+              <div>
+                <iframe style={{border:'0', width: '100%', height: '270px'}} src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" allowfullscreen></iframe>
+              </div>
+
+              <div class="row mt-5">
+
+                <div class="col-lg-4" data-aos="fade-right">
+                  <div class="info">
+                    <div class="address">
+                      <i class="icofont-google-map"></i>
+                      <h4>Location:</h4>
+                      <p>A108 Adam Street, New York, NY 535022</p>
+                    </div>
+
+                    <div class="email">
+                      <i class="icofont-envelope"></i>
+                      <h4>Email:</h4>
+                      <p>info@example.com</p>
+                    </div>
+
+                    <div class="phone">
+                      <i class="icofont-phone"></i>
+                      <h4>Call:</h4>
+                      <p>+1 5589 55488 55s</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+
+                  <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="form-row">
+                      <div class="col-md-6 form-group">
+                        <input type="text" name="name" class="form-control" onChange={(e)=>this.setState({Name:e.target.value})} id="name" onChange placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <div class="validate"></div>
+                      </div>
+                      <div class="col-md-6 form-group">
+                        <input type="email" class="form-control" name="email" id="email" onChange={(e)=>this.setState({Email:e.target.value})} placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                        <div class="validate"></div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="text" class="form-control" name="subject" id="subject" onChange={(e)=>this.setState({Subject:e.target.value})} placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                      <div class="validate"></div>
+                    </div>
+                    <div class="form-group">
+                      <textarea class="form-control" name="message" rows="5" data-rule="required" onChange={(e)=>this.setState({Messages:e.target.value})} data-msg="Please write something for us" placeholder="Message"></textarea>
+                      <div class="validate"></div>
+                    </div>
+                    <div class="mb-3">
+                      <div class="loading">Loading</div>
+                      <div class="error-message"></div>
+                      <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                    <div class="text-center"><button type="submit">Send Message</button></div>
+                  </form>
+
+                </div>
+
+              </div>
+
+            </div>
+    </section>
+
+        {/* <section id="faq" class="faq">
+          <div class="container">
+
+            <div class="section-title" data-aos="zoom-in">
+              <h2>F.A.Q</h2>
+              <h3>Frequently Asked <span>Questions</span></h3>
+            </div>
+
+            <div class="faq-list">
+              <ul>
+                <FAQ />
+              </ul>
+            </div>
+
+          </div>
+        </section> */}
+
+<footer id="footer">
+
+<div class="container footer-bottom clearfix">
+  <div class="copyright">
+    &copy; Copyright <strong><span>Mwisr</span></strong>. All Rights Reserved
+  </div>
+  <div class="credits">
+  
+    Designed and Powered by <a href="https://bootstrapmade.com/">Mwisr</a>
+  </div>
+</div>
+</footer>
       </div>
     
       );
